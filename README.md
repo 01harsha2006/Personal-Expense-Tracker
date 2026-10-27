@@ -1,33 +1,32 @@
 # Personal Expense Tracker 💰
 
-A full-stack web application built using the MERN stack that helps users record, manage, and track their daily expenses. The application provides a simple interface for adding expenses, viewing expense records, editing or deleting entries, and calculating total spending.
+A full-stack MERN application that helps users record, manage, and track daily expenses. Users can add, view, edit, and delete expenses and monitor their total spending through a simple, responsive interface.
 
-## 🌐 Live Demo
+## 🌐 Live Links
 
-- **Frontend:** https://personal-expense-tracker-1-nbme.onrender.com/
-- **Backend API:** https://personal-expense-tracker-api-6ggc.onrender.com
+- **Frontend Website:** https://personal-expense-tracker-1-nbme.onrender.com/
+- **Backend API — Expenses:** https://personal-expense-tracker-api-6ggc.onrender.com/api/expenses
+- **Backend Homepage:** https://personal-expense-tracker-api-6ggc.onrender.com
 - **GitHub Repository:** https://github.com/01harsha2006/Personal-Expense-Tracker
 
 ## ✨ Features
 
-- Add new expenses with title, amount, category, and date.
+- Add expenses with title, amount, category, and date.
 - View all recorded expenses.
-- Edit existing expense records.
-- Delete unwanted expenses.
-- Automatically calculate total expenses.
-- Validate expense details before submission.
-- Responsive user interface for different screen sizes.
-- Store expense records in MongoDB Atlas.
-- Connect the React frontend to the Express backend through REST APIs.
+- Edit existing expenses.
+- Delete expenses.
+- Automatically calculate total spending.
+- Validate expense details.
+- Responsive user interface.
+- Store data in MongoDB Atlas.
+- Communicate between frontend and backend using REST APIs.
 
 ## 🛠️ Technologies Used
 
 **Frontend**
 - React.js
 - Vite
-- HTML5
-- CSS3
-- JavaScript
+- HTML5, CSS3, JavaScript
 
 **Backend**
 - Node.js
@@ -35,10 +34,8 @@ A full-stack web application built using the MERN stack that helps users record,
 - Mongoose
 - REST API
 
-**Database**
+**Database and Deployment**
 - MongoDB Atlas
-
-**Deployment**
 - Render
 - GitHub
 
@@ -55,12 +52,10 @@ Personal-Expense-Tracker/
 │   │   └── main.jsx
 │   ├── package.json
 │   └── vite.config.js
-│
 ├── backend/
 │   ├── server.js
 │   ├── package.json
 │   └── .env.example
-│
 ├── .gitignore
 └── README.md
 ```
@@ -69,34 +64,32 @@ Personal-Expense-Tracker/
 
 ### Prerequisites
 
-Install the following before running the project locally:
-
 - Node.js and npm
-- A MongoDB Atlas account or MongoDB instance
+- MongoDB Atlas account or a MongoDB instance
 - Git
 
-### 1. Clone the Repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/01harsha2006/Personal-Expense-Tracker.git
 cd Personal-Expense-Tracker
 ```
 
-### 2. Set Up the Backend
+### 2. Configure and run the backend
 
 ```bash
 cd backend
 npm install
 ```
 
-Create a `.env` file inside the `backend` folder:
+Create a `backend/.env` file:
 
 ```env
 MONGODB_URI=your_mongodb_connection_string
 PORT=5000
 ```
 
-Replace `your_mongodb_connection_string` with your own MongoDB connection string. Keep your real `.env` file private and never commit database credentials to GitHub.
+Replace the placeholder with your MongoDB connection string. Never commit real database credentials to a public repository.
 
 Start the backend:
 
@@ -104,18 +97,18 @@ Start the backend:
 node server.js
 ```
 
-The backend should run at `http://localhost:5000`, provided the port is available.
+The backend runs locally at `http://localhost:5000` when the port is available.
 
-### 3. Set Up the Frontend
+### 3. Configure and run the frontend
 
-Open another terminal:
+Open a second terminal from the project root:
 
 ```bash
 cd frontend
 npm install
 ```
 
-Create a `.env` file inside the `frontend` folder:
+Create a `frontend/.env` file:
 
 ```env
 VITE_API_URL=http://localhost:5000/api/expenses
@@ -127,11 +120,11 @@ Start the frontend:
 npm run dev
 ```
 
-Open the local URL displayed in your terminal, usually `http://localhost:5173`.
+Open the local URL shown in the terminal, usually `http://localhost:5173`.
 
-## 🔗 API Endpoints
+## 🔗 Backend API Endpoints
 
-The backend provides REST API endpoints for expense management.
+Base URL: `https://personal-expense-tracker-api-6ggc.onrender.com`
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -140,37 +133,41 @@ The backend provides REST API endpoints for expense management.
 | PUT | `/api/expenses/:id` | Update an expense |
 | DELETE | `/api/expenses/:id` | Delete an expense |
 
+The live GET endpoint is:
+
+https://personal-expense-tracker-api-6ggc.onrender.com/api/expenses
+
+It returns expense records in JSON format. An empty array (`[]`) means there are currently no records.
+
 ### Expense Data Fields
 
-Each expense contains:
-
-- `title` — name or description of the expense.
+- `title` — expense name or description.
 - `amount` — amount spent.
 - `category` — expense category.
-- `date` — date of the expense.
+- `date` — expense date.
 
 ## 🚀 Deployment
 
-The application is deployed using Render.
+The project is hosted using Render, with MongoDB Atlas as its database.
 
 - **Frontend:** Render Static Site
 - **Backend:** Render Web Service
 - **Database:** MongoDB Atlas
 
-The frontend uses the `VITE_API_URL` environment variable to communicate with the hosted backend. The backend uses `MONGODB_URI` to connect to MongoDB Atlas.
+The frontend uses the `VITE_API_URL` environment variable to connect to the hosted backend. The backend uses `MONGODB_URI` to connect to MongoDB Atlas.
 
 ## 🔒 Security
 
-- Database credentials should be stored in environment variables.
-- Do not commit real `.env` files or database passwords to a public repository.
+- Keep database credentials in environment variables.
+- Do not commit real `.env` files or passwords to GitHub.
 - Configure MongoDB Atlas network access carefully.
-- Validate incoming API data on the server.
+- Validate incoming data on the server.
 
 ## 🎯 Project Objective
 
-The objective of this project is to develop a simple and responsive expense management application using the MERN stack. It demonstrates frontend development, REST API integration, database connectivity, CRUD operations, and cloud deployment.
+To build a responsive expense management application using the MERN stack and demonstrate frontend development, REST API integration, CRUD operations, database connectivity, and cloud deployment.
 
-## 👩‍💻 Author
+## 👨‍💻 Author
 
 **Harsha Vardhan**
 
